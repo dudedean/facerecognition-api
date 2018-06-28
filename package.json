@@ -1,0 +1,17 @@
+{
+  "name": "facerecognition-api",
+  "version": "1.0.0",
+  "description": "Face recognition appz api",
+  "main": "script.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "author": "Aima Aimadudin",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "nodemon": "^1.17.5"
+  }
+}
