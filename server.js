@@ -1,9 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt-nodejs');
+const cors = require('cors');
 
 const app = express();
 
+app.use(cors());
 app.use(bodyParser.json());
 
 const database = {
@@ -48,16 +50,16 @@ app.get('/', (req,res) => {
 
 app.post('/signin', (req,res) => {
 
-    // Load hash from your password DB.
-    bcrypt.compare("apples", '$2a$10$dhOUJc4SGWUZzHddbPOTf.O..1Y96ytEyYv68GdfmH6Bh5XPkwguK', function(err, res) {
-        console.log('logged in',res);
-    });
-    bcrypt.compare("veggies", '$2a$10$dhOUJc4SGWUZzHddbPOTf.O..1Y96ytEyYv68GdfmH6Bh5XPkwguK', function(err, res) {
-        console.log('wrong',res);
+    // // Load hash from your password DB.
+    // bcrypt.compare("apples", '$2a$10$dhOUJc4SGWUZzHddbPOTf.O..1Y96ytEyYv68GdfmH6Bh5XPkwguK', function(err, res) {
+    //     console.log('logged in',res);
+    // });
+    // bcrypt.compare("veggies", '$2a$10$dhOUJc4SGWUZzHddbPOTf.O..1Y96ytEyYv68GdfmH6Bh5XPkwguK', function(err, res) {
+    //     console.log('wrong',res);
         
-    });
+    // });
 
-    if(req.body.email === database.users[1].email && req.body.password === database.users[1].password){
+    if(req.body.email === database.users[0].email && req.body.password === database.users[0].password){
         res.json('success');
     }
     else{
